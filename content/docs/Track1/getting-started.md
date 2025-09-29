@@ -49,7 +49,7 @@ curl http://localhost:8000/v1/chat/completions -H "Content-Type: application/jso
 }'
 ```
 
-**If you're trying to connect from a docker container, you can add the argument `--network=host` to be able to connect to localhost from inside the docker container**.
+**If you're trying to connect from a docker container, you can add the argument `--network=host` to be able to connect to localhost from inside the docker container on linux, or connect to the `host.docker.internal:8000` endpoint instead.**.
 
 # Step 2: Programmatically interacting with the API
 
