@@ -49,6 +49,8 @@ curl http://localhost:8000/v1/chat/completions -H "Content-Type: application/jso
 }'
 ```
 
+**If you're trying to connect from a docker container, you can add the argument `--network=host` to be able to connect to localhost from inside the docker container**.
+
 # Step 2: Programmatically interacting with the API
 
 In Python, the `openai` package can be used to interact with the vLLM instance. Under the hood, this is largely a wrapper around the OpenAI REST API, so the insights from the previous sections still apply. I've included a few code samples to get you started with these below.
