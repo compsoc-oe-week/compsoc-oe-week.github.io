@@ -41,6 +41,9 @@ You can use PuTTY to create the key, likewise don't set a passphrase
 - You should then see a shell inside your VM
 ## Spawning an openEuler container
 **You can follow these instructions on any Windows or Linux device, including the provided VM, or even your laptop**.
+
+You may need to install docker on your VM before it's available. Instructions can be found [here](https://docs.docker.com/engine/install/ubuntu/).
+
 1. Put the following into a file called `Dockerfile`:
 ```Dockerfile
 FROM openeuler/openeuler:latest
