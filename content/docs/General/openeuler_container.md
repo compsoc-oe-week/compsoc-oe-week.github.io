@@ -40,7 +40,7 @@ You can use PuTTY to create the key, likewise don't set a passphrase
 - When prompted for your "OTP" enter the number from your MFA app.
 - You should then see a shell inside your VM
 ## Spawning an openEuler container
-**You can follow these instructions on any Linux device, including the provided VM, or even your laptop**. If you're running Windows, we'd highly recommend checking out [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/setup/environment).
+**You can follow these instructions on any Windows or Linux device, including the provided VM, or even your laptop**.
 1. Put the following into a file called `Dockerfile`:
 ```Dockerfile
 FROM openeuler/openeuler:latest
