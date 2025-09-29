@@ -17,7 +17,7 @@ In Kubernetes, state is expressed in the form of resources. Some common resource
 You can perform actions on resources using the `kubectl` utility. For instance,
 ```
 # To list pods running:
-kubectl get pods
+kubectl -n eidf219ns get pods
 # To create a resource from a file:
 kubectl -n eidf219ns create -f myjob.yaml
 # To see the logs emitted from a pod (pods are spawned by jobs)
