@@ -32,12 +32,14 @@ For this challenge, Job resources are the most relevent.
 
 Jobs can be specified with yaml files. This makes them reproducible and much easier to debug. To actually create a resource specified by a yaml file, you can use the command `kubectl -n eidf219ns create -f /path/to/file.yaml`. 
 
+**When creating jobs, please prepend your team name to the job name. Failure to do so may result in your jobs being deleted.**
+
 As an example:
 ```yaml
 apiVersion: batch/v1
 kind: Job
 metadata:
- generateName: jobtest-
+ generateName: [team-name]-jobtest-
  labels:
   kueue.x-k8s.io/queue-name:  eidf219ns-user-queue
 spec:
@@ -70,7 +72,7 @@ The following will attempt to claim a GPU and then display PCIE devices in the l
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: gpu-test-1-
+  generateName: [team-name]-gpu-test-1-
   labels:
     kueue.x-k8s.io/queue-name: eidf219ns-user-queue
     app: gputest1
