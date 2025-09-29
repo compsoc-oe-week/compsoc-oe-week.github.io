@@ -7,5 +7,12 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/docs/general/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up your GitHub Repo</title>
+      <link>http://localhost:1313/docs/general/github_repo_setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/general/github_repo_setup/</guid>
+      <description>&lt;h2 id=&#34;how-to-make-a-private-github-repository-on-the-challenge-organisation&#34;&gt;How to make a private GitHub Repository on the Challenge Organisation&lt;a class=&#34;anchor&#34; href=&#34;#how-to-make-a-private-github-repository-on-the-challenge-organisation&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;This guide assumes that you&amp;rsquo;ve been invited to the GitHub Organisation for the Challenge Week and that you&amp;rsquo;ve accepted this invite. If you&amp;rsquo;re unsure about this, please contact the Organisers in the Discord Server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Go to the following link: &lt;a href=&#34;https://github.com/compsoc-oe-week&#34;&gt;https://github.com/compsoc-oe-week&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Make a repository. You can do this by clicking the green &amp;lsquo;New&amp;rsquo; button next to the repository search.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

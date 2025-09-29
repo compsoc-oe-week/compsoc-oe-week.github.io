@@ -9,17 +9,24 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Track 1</title>
-      <link>http://localhost:1313/docs/track1/track1/</link>
+      <link>http://localhost:1313/docs/track1/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/track1/track1/</guid>
+      <guid>http://localhost:1313/docs/track1/getting-started/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;For Track 1, we&amp;rsquo;ve allocated 2 shared vLLM instances to be used for your solutions in the challenge. These instances are OpenAI API compatible, meaning they can be interacted with tooling and libraries originally created for working with OpenAI.&lt;/p&gt;&#xA;&lt;p&gt;The first instance can be located at &lt;code&gt;eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000&lt;/code&gt; and is a &lt;code&gt;Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8&lt;/code&gt; model under the hood, to be used for general purpose queries and code generation. The second instance is a visual reasoning focused model and can be found at &lt;code&gt;eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8001&lt;/code&gt; (a &lt;code&gt;Qwen/Qwen2.5-VL-32B-Instruct&lt;/code&gt; model under the hood).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Started with Track 2</title>
-      <link>http://localhost:1313/docs/track2/track2/</link>
+      <link>http://localhost:1313/docs/track2/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/track2/track2/</guid>
+      <guid>http://localhost:1313/docs/track2/getting-started/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;This document will include challenge specific information and is useful to read even if you have prior experience with Kubernetes.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Track 2 teams will be given access to a shared kubernetes compute cluster. This cluster makes available 6 nodes, 4 of which with 8 x H200 GPUs, and 2 of which with 8 x H100 GPUs. The cluster is to be used for training and tuning your models.&lt;/p&gt;&#xA;&lt;p&gt;Note that the cluster can only be interacted with through your team&amp;rsquo;s VM. So, &lt;strong&gt;all commands given should be run on your team&amp;rsquo;s VM&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Setting up your GitHub Repo</title>
+      <link>http://localhost:1313/docs/general/github_repo_setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/general/github_repo_setup/</guid>
+      <description>&lt;h2 id=&#34;how-to-make-a-private-github-repository-on-the-challenge-organisation&#34;&gt;How to make a private GitHub Repository on the Challenge Organisation&lt;a class=&#34;anchor&#34; href=&#34;#how-to-make-a-private-github-repository-on-the-challenge-organisation&#34;&gt;#&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;This guide assumes that you&amp;rsquo;ve been invited to the GitHub Organisation for the Challenge Week and that you&amp;rsquo;ve accepted this invite. If you&amp;rsquo;re unsure about this, please contact the Organisers in the Discord Server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Go to the following link: &lt;a href=&#34;https://github.com/compsoc-oe-week&#34;&gt;https://github.com/compsoc-oe-week&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Make a repository. You can do this by clicking the green &amp;lsquo;New&amp;rsquo; button next to the repository search.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Showcases</title>

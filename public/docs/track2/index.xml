@@ -9,9 +9,9 @@
     <atom:link href="http://localhost:1313/docs/track2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Track 2</title>
-      <link>http://localhost:1313/docs/track2/track2/</link>
+      <link>http://localhost:1313/docs/track2/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/track2/track2/</guid>
+      <guid>http://localhost:1313/docs/track2/getting-started/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;This document will include challenge specific information and is useful to read even if you have prior experience with Kubernetes.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Track 2 teams will be given access to a shared kubernetes compute cluster. This cluster makes available 6 nodes, 4 of which with 8 x H200 GPUs, and 2 of which with 8 x H100 GPUs. The cluster is to be used for training and tuning your models.&lt;/p&gt;&#xA;&lt;p&gt;Note that the cluster can only be interacted with through your team&amp;rsquo;s VM. So, &lt;strong&gt;all commands given should be run on your team&amp;rsquo;s VM&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

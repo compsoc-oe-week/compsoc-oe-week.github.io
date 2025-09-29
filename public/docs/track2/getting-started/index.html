@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview#
+This document will include challenge specific information and is useful to read even if you have prior experience with Kubernetes.
+Track 2 teams will be given access to a shared kubernetes compute cluster. This cluster makes available 6 nodes, 4 of which with 8 x H200 GPUs, and 2 of which with 8 x H100 GPUs. The cluster is to be used for training and tuning your models.
+Note that the cluster can only be interacted with through your team&rsquo;s VM. So, all commands given should be run on your team&rsquo;s VM.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/track2/getting-started/">
+  <meta property="og:site_name" content="OE Challenge Docs">
+  <meta property="og:title" content="Getting Started with Track 2">
+  <meta property="og:description" content="Overview# This document will include challenge specific information and is useful to read even if you have prior experience with Kubernetes.
+Track 2 teams will be given access to a shared kubernetes compute cluster. This cluster makes available 6 nodes, 4 of which with 8 x H200 GPUs, and 2 of which with 8 x H100 GPUs. The cluster is to be used for training and tuning your models.
+Note that the cluster can only be interacted with through your team’s VM. So, all commands given should be run on your team’s VM.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Getting Started with Track 2 | OE Challenge Docs</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/track2/getting-started/">
+<link rel="stylesheet" href="/book.min.e58fd22972c82259ceb9ea239282807a365c15b0743c7b17923e78badabbe59f.css" integrity="sha256-5Y/SKXLIIlnOueojkoKAejZcFbB0PHsXkj54utq75Z8=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.a8815dca4384a4db50ab7e5b4a70d25b77edb20ee300495f368b4fcc096a2545.js" integrity="sha256-qIFdykOEpNtQq35bSnDSW3ftsg7jAElfNotPzAlqJUU=" crossorigin="anonymous"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>OE Challenge Docs</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      General</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/general/github_repo_setup/" class="">
+      Setting up your GitHub Repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Track 1</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/track1/getting-started/" class="">
+      Getting Started with Track 1</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Track 2</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/track2/getting-started/" class="active">
+      Getting Started with Track 2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Getting Started with Track 2</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#running-your-first-job">Running your first job</a></li>
+    <li><a href="#claiming-gpus">Claiming GPUs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#setting-up-my-default-namespace">Setting up my default namespace</a></li>
+    <li><a href="#persistent-volume-claims">Persistent Volume Claims</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="overview">Overview<a class="anchor" href="#overview">#</a></h1>
+<p><strong>This document will include challenge specific information and is useful to read even if you have prior experience with Kubernetes.</strong></p>
+<p>Track 2 teams will be given access to a shared kubernetes compute cluster. This cluster makes available 6 nodes, 4 of which with 8 x H200 GPUs, and 2 of which with 8 x H100 GPUs. The cluster is to be used for training and tuning your models.</p>
+<p>Note that the cluster can only be interacted with through your team&rsquo;s VM. So, <strong>all commands given should be run on your team&rsquo;s VM</strong>.</p>
+<h1 id="crash-course-kubernetes">Crash Course Kubernetes<a class="anchor" href="#crash-course-kubernetes">#</a></h1>
+<p>In Kubernetes, state is expressed in the form of resources. Some common resource types are pods (like containers in docker), deployments (similar to a docker-compose file), and jobs.</p>
+<p>You can perform actions on resources using the <code>kubectl</code> utility. For instance,</p>
+<pre tabindex="0"><code># To list pods running:
+kubectl get pods
+# To create a resource from a file:
+kubectl -n eidf219ns create -f myjob.yaml
+# To see the logs emitted from a pod (pods are spawned by jobs)
+kubectl -n eidf219ns logs &lt;pod_name&gt;
+# To delete a broken or finished job:
+kubectl -n eidf219ns delete job &lt;job_name&gt;</code></pre><p>For this challenge, Job resources are the most relevent.</p>
+<h2 id="running-your-first-job">Running your first job<a class="anchor" href="#running-your-first-job">#</a></h2>
+<p>Jobs can be specified with yaml files. This makes them reproducible and much easier to debug. To actually create a resource specified by a yaml file, you can use the command <code>kubectl -n eidf219ns create -f /path/to/file.yaml</code>.</p>
+<p>As an example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">batch/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Job</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">generateName</span>: <span style="color:#ae81ff">jobtest-</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kueue.x-k8s.io/queue-name</span>:  <span style="color:#ae81ff">eidf219ns-user-queue</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">completions</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">backoffLimit</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">ttlSecondsAfterFinished</span>: <span style="color:#ae81ff">1800</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">name</span>: <span style="color:#ae81ff">job-test</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>   - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">cudasample</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">image</span>: <span style="color:#ae81ff">nvcr.io/nvidia/k8s/cuda-sample:nbody-cuda11.7.1</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">args</span>: [<span style="color:#e6db74">&#34;-benchmark&#34;</span>, <span style="color:#e6db74">&#34;-numbodies=512000&#34;</span>, <span style="color:#e6db74">&#34;-fp64&#34;</span>, <span style="color:#e6db74">&#34;-fullscreen&#34;</span>]
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">requests</span>:
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#39;1Gi&#39;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">limits</span>:
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#39;4Gi&#39;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#f92672">nvidia.com/gpu</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">restartPolicy</span>: <span style="color:#ae81ff">Never</span></span></span></code></pre></div><h2 id="claiming-gpus">Claiming GPUs<a class="anchor" href="#claiming-gpus">#</a></h2>
+<p>The following will attempt to claim a GPU and then display PCIE devices in the logs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">batch/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Job</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">generateName</span>: <span style="color:#ae81ff">gpu-test-1-</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">kueue.x-k8s.io/queue-name</span>: <span style="color:#ae81ff">eidf219ns-user-queue</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app</span>: <span style="color:#ae81ff">gputest1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Selecter would go here</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:  
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">gputest1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">restartPolicy</span>: <span style="color:#ae81ff">Never</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">ubuntu</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">image</span>: <span style="color:#ae81ff">ubuntu:20.04</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;apt-get update &amp;&amp; apt-get install lshw -y &amp;&amp; lshw -C display&#34;</span>]
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">limits</span>:
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">nvidia.com/gpu</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">cpu</span>: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;4Gi&#34;</span></span></span></code></pre></div><p>By default, it will pick a GPU variant and attempt to select specifically nodes with that GPU, so if you see that your Job is marked as pending for long periods, it may be worth trying to select other types of GPUs. This can be done adding the following lines where it says &ldquo;Selecter would go here&rdquo; in the code sample above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">nodeSelector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">nvidia.com/gpu-product</span>: <span style="color:#e6db74">&#39;&lt;GPU Type&gt;&#39;</span></span></span></code></pre></div><p>See the <a href="https://docs.eidf.ac.uk/services/gpuservice/training/L1_getting_started/#specifying-gpu-requirements">EIDF Doc&rsquo;s</a> for more information.</p>
+<h1 id="faq--common-issues">FAQ / Common Issues<a class="anchor" href="#faq--common-issues">#</a></h1>
+<h2 id="setting-up-my-default-namespace">Setting up my default namespace<a class="anchor" href="#setting-up-my-default-namespace">#</a></h2>
+<p>If you&rsquo;d like to avoid having to type <code>-n eidf219ns</code> every time, you can follow the <a href="https://docs.eidf.ac.uk/services/gpuservice/training/L1_getting_started/#change-the-default-kubectl-namespace-in-the-project-kubeconfig-file">instructions here</a> to setup your default namespace.</p>
+<p>Doing so allows you to simply type <code>kubectl get pods</code> for instance to list all pods, rather than <code>kubectl -n eidf219ns get pods</code></p>
+<h2 id="persistent-volume-claims">Persistent Volume Claims<a class="anchor" href="#persistent-volume-claims">#</a></h2>
+<p>If you&rsquo;d like a PVC created for your team, please message @emily.747 on Discord or <a href="mailto:techsec@comp-soc.com">email me</a>.</p>
+<h1 id="further-documentation">Further Documentation<a class="anchor" href="#further-documentation">#</a></h1>
+<p>I&rsquo;d highly recommend the following resources and documentation when you&rsquo;re stuck:</p>
+<ul>
+<li><a href="https://docs.eidf.ac.uk/services/gpuservice/">EIDF&rsquo;s GPU Service Documentation</a></li>
+<li><a href="https://kubernetes.io/docs/home/">Kubernetes Docs</a></li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+      <a href="/docs/track1/getting-started/" class="flex align-center">
+        <img src="/icons/backward.svg" class="book-icon" alt="Previous" title="Getting Started with Track 1" />
+        <span>Getting Started with Track 1</span>
+      </a>
+    
+    </span>
+    <span>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+
+ 
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#running-your-first-job">Running your first job</a></li>
+    <li><a href="#claiming-gpus">Claiming GPUs</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#setting-up-my-default-namespace">Setting up my default namespace</a></li>
+    <li><a href="#persistent-volume-claims">Persistent Volume Claims</a></li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
