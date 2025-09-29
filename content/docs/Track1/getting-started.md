@@ -12,7 +12,7 @@ The first instance can be located at `eidf219-main.vms.os.eidf.epcc.ed.ac.uk:800
 
 ## Connecting from your team's VM
 
-The first and easiest way to connect to the API is to connect to your team's VM by following the instructions found [here](). From there, you can run a test query against the vLLM instances like so:
+The first and easiest way to connect to the API is to connect to your team's VM by following the instructions found [here](/docs/general/openeuler_container/). From there, you can run a test query against the vLLM instances like so:
 ```bash
 curl http://eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000/v1/chat/completions -H "Content-Type: application/json" -d '{
   "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
