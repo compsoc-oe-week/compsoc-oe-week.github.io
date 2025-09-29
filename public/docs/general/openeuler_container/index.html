@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Getting started as a participant#
+Create an SSH Key#
+For more info, click here or ask for help
+On Linux/Mac#
+
+Run ssh-keygen
+Do not set a passphrase
+Save the key-pair somewhere you can find it
+
+On Windows#
+You can use PuTTY to create the key, likewise don&rsquo;t set a passphrase
+See here for information 
+Creating a SAFE account#
+
+Go to the SAFE website
+Fill out the necessary details
+
+You must use your student email
+
+
+Upload your SSH public key to the form - *.pub
+Press &ldquo;Register&rdquo;
+Check your email for confirmation, then finish registration by clicking the link and setting your password
+
+Joining the Hackathon Project#
+
+Go here to request to join the project
+Look for eidf219 - InfSoc GPU hackathon
+Select that, click Next then Apply
+We will approve your application as soon as we can
+We will then create you a login account for your VM
+
+You&rsquo;ll get another email, set your password and MFA OTP
+You should already have Microsoft Authenticator for uni, but others will work
+
+
+
+Getting a VM created#
+
+We&rsquo;ll aim to create VMs for teams before the day
+If you form a team on the day, we&rsquo;ll need to create you a VM - so let us know!
+
+Connecting to your VM#
+
+You can connect to the VM CLI via a web interface (VDI), but we&rsquo;d recommend using SSH in your terminal.
+To SSH to your VM you must first go through the EIDF gateway as a security measure, so your SSH command will likely take the form:
+
+ssh-add /path/to/ssh-key &amp;&amp; ssh -J [username]@eidf-gateway.epcc.ed.ac.uk [username]@[vm_ip]
+That is, your project account username
+
+
+The EIDF provides documentation on connecting via SSH - following this is best, if you&rsquo;re struggling ask an organiser for help
+When prompted for your &ldquo;OTP&rdquo; enter the number from your MFA app.
+You should then see a shell inside your VM
+
+Spawning an openEuler container#
+You can follow these instructions on any Linux device, including the provided VM, or even your laptop. If you&rsquo;re running Windows, we&rsquo;d highly recommend checking out Windows Subsystem for Linux (WSL).">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/general/openeuler_container/">
+  <meta property="og:site_name" content="OE Challenge Docs">
+  <meta property="og:title" content="START HERE - Getting started as a participant">
+  <meta property="og:description" content="Getting started as a participant# Create an SSH Key# For more info, click here or ask for help
+On Linux/Mac# Run ssh-keygen Do not set a passphrase Save the key-pair somewhere you can find it On Windows# You can use PuTTY to create the key, likewise don’t set a passphrase See here for information Creating a SAFE account# Go to the SAFE website Fill out the necessary details You must use your student email Upload your SSH public key to the form - *.pub Press “Register” Check your email for confirmation, then finish registration by clicking the link and setting your password Joining the Hackathon Project# Go here to request to join the project Look for eidf219 - InfSoc GPU hackathon Select that, click Next then Apply We will approve your application as soon as we can We will then create you a login account for your VM You’ll get another email, set your password and MFA OTP You should already have Microsoft Authenticator for uni, but others will work Getting a VM created# We’ll aim to create VMs for teams before the day If you form a team on the day, we’ll need to create you a VM - so let us know! Connecting to your VM# You can connect to the VM CLI via a web interface (VDI), but we’d recommend using SSH in your terminal. To SSH to your VM you must first go through the EIDF gateway as a security measure, so your SSH command will likely take the form: ssh-add /path/to/ssh-key &amp;&amp; ssh -J [username]@eidf-gateway.epcc.ed.ac.uk [username]@[vm_ip] That is, your project account username The EIDF provides documentation on connecting via SSH - following this is best, if you’re struggling ask an organiser for help When prompted for your “OTP” enter the number from your MFA app. You should then see a shell inside your VM Spawning an openEuler container# You can follow these instructions on any Linux device, including the provided VM, or even your laptop. If you’re running Windows, we’d highly recommend checking out Windows Subsystem for Linux (WSL).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>START HERE - Getting started as a participant | OE Challenge Docs</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/docs/general/openeuler_container/">
+<link rel="stylesheet" href="/book.min.e58fd22972c82259ceb9ea239282807a365c15b0743c7b17923e78badabbe59f.css" integrity="sha256-5Y/SKXLIIlnOueojkoKAejZcFbB0PHsXkj54utq75Z8=" crossorigin="anonymous">
+
+
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.f69df678bb8a40f636560a578fd5e9a66d31a90b9b5a1cb68431b9c69650a481.js" integrity="sha256-9p32eLuKQPY2VgpXj9Xppm0xqQubWhy2hDG5xpZQpIE=" crossorigin="anonymous"></script>
+
+  
+</head>
+<body dir="ltr" class="book-kind-page book-type-docs">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    
+<aside class="book-menu">
+  <div class="book-menu-content">
+    
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>OE Challenge Docs</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      General</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/general/openeuler_container/" class="active">
+      START HERE - Getting started as a participant</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/general/github_repo_setup/" class="">
+      Setting up your GitHub Repo</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Track 1</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/track1/getting-started/" class="">
+      Getting Started with Track 1</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a>
+      Track 2</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/track2/getting-started/" class="">
+      Getting Started with Track 2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+
+  </div>
+</aside>
+ 
+
+    <div class="book-page">
+      <header class="book-header hidden">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/icons/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>START HERE - Getting started as a participant</h3>
+
+  <label for="toc-control">
+    
+    <img src="/icons/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-an-ssh-key">Create an SSH Key</a>
+      <ul>
+        <li><a href="#on-linuxmac">On Linux/Mac</a></li>
+        <li><a href="#on-windows">On Windows</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-a-safe-account">Creating a SAFE account</a></li>
+    <li><a href="#joining-the-hackathon-project">Joining the Hackathon Project</a></li>
+    <li><a href="#getting-a-vm-created">Getting a VM created</a></li>
+    <li><a href="#connecting-to-your-vm">Connecting to your VM</a></li>
+    <li><a href="#spawning-an-openeuler-container">Spawning an openEuler container</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="getting-started-as-a-participant">Getting started as a participant<a class="anchor" href="#getting-started-as-a-participant">#</a></h1>
+<h2 id="create-an-ssh-key">Create an SSH Key<a class="anchor" href="#create-an-ssh-key">#</a></h2>
+<p>For more info, <a href="https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/generate-ssh-key-pair.html">click here</a> or ask for help</p>
+<h3 id="on-linuxmac">On Linux/Mac<a class="anchor" href="#on-linuxmac">#</a></h3>
+<ol>
+<li>Run <code>ssh-keygen</code></li>
+<li>Do not set a passphrase</li>
+<li>Save the key-pair somewhere you can find it</li>
+</ol>
+<h3 id="on-windows">On Windows<a class="anchor" href="#on-windows">#</a></h3>
+<p>You can use PuTTY to create the key, likewise don&rsquo;t set a passphrase
+<a href="https://learn.microsoft.com/en-us/viva/glint/setup/sftp-ssh-key-gen#:~:text=Create%20an%20SSH%20key%20pair%20on%20Microsoft%20Windows">See here for information </a></p>
+<h2 id="creating-a-safe-account">Creating a SAFE account<a class="anchor" href="#creating-a-safe-account">#</a></h2>
+<ol>
+<li>Go to <a href="https://safe.epcc.ed.ac.uk/signup.jsp">the SAFE website</a></li>
+<li>Fill out the necessary details
+<ul>
+<li><strong>You must use your student email</strong></li>
+</ul>
+</li>
+<li>Upload your SSH <strong>public</strong> key to the form - <code>*.pub</code></li>
+<li>Press &ldquo;Register&rdquo;</li>
+<li>Check your email for confirmation, then finish registration by clicking the link and setting your password</li>
+</ol>
+<h2 id="joining-the-hackathon-project">Joining the Hackathon Project<a class="anchor" href="#joining-the-hackathon-project">#</a></h2>
+<ol>
+<li>Go <a href="https://safe.epcc.ed.ac.uk/TransitionServlet/ApplyProject//-/Transition=Apply">here</a> to request to join the project</li>
+<li>Look for <code>eidf219 - InfSoc GPU hackathon</code></li>
+<li>Select that, click <code>Next</code> then <code>Apply</code></li>
+<li>We will approve your application as soon as we can</li>
+<li>We will then create you a login account for your VM
+<ol>
+<li>You&rsquo;ll get another email, set your password and MFA OTP</li>
+<li>You should already have Microsoft Authenticator for uni, but others will work</li>
+</ol>
+</li>
+</ol>
+<h2 id="getting-a-vm-created">Getting a VM created<a class="anchor" href="#getting-a-vm-created">#</a></h2>
+<ol>
+<li>We&rsquo;ll aim to create VMs for teams before the day</li>
+<li>If you form a team on the day, we&rsquo;ll need to create you a VM - so let us know!</li>
+</ol>
+<h2 id="connecting-to-your-vm">Connecting to your VM<a class="anchor" href="#connecting-to-your-vm">#</a></h2>
+<ul>
+<li>You can connect to the VM CLI via a web interface (VDI), but we&rsquo;d recommend using SSH in your terminal.</li>
+<li>To SSH to your VM you must first go through the EIDF gateway as a security measure, so your SSH command will likely take the form:
+<ul>
+<li><code>ssh-add /path/to/ssh-key &amp;&amp; ssh -J [username]@eidf-gateway.epcc.ed.ac.uk [username]@[vm_ip]</code></li>
+<li>That is, your project account username</li>
+</ul>
+</li>
+<li>The <a href="https://docs.eidf.ac.uk/access/ssh/">EIDF provides documentation</a> on connecting via SSH - following this is best, if you&rsquo;re struggling ask an organiser for help</li>
+<li>When prompted for your &ldquo;OTP&rdquo; enter the number from your MFA app.</li>
+<li>You should then see a shell inside your VM</li>
+</ul>
+<h2 id="spawning-an-openeuler-container">Spawning an openEuler container<a class="anchor" href="#spawning-an-openeuler-container">#</a></h2>
+<p><strong>You can follow these instructions on any Linux device, including the provided VM, or even your laptop</strong>. If you&rsquo;re running Windows, we&rsquo;d highly recommend checking out <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">Windows Subsystem for Linux (WSL)</a>.</p>
+<ol>
+<li>Put the following into a file called <code>Dockerfile</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">openeuler/openeuler:latest</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">SHELL</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> /usr/bin/dnf update -y<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> /usr/bin/dnf install -y python3 nodejs npm curl go sqlite htop<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl https://sh.rustup.rs -sSf | sh -s -- -y<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> . <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.cargo/env&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> /usr/bin/dnf group install -y <span style="color:#e6db74">&#34;Development Tools&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/work</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> /bin/sh</span></span></code></pre></div><ol start="2">
+<li>Put the following into a file called <code>docker-compose.yaml</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">oe</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">build </span>: <span style="color:#ae81ff">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">container_name</span>: <span style="color:#e6db74">&#34;oe&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tty</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">stdin_open</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">./work:/work</span></span></span></code></pre></div><ol start="3">
+<li>Connect your VM</li>
+<li>Start the container with <code>docker compose build &amp;&amp; docker compose up -d</code></li>
+<li>Open a shell in the container with <code>docker exec -it oe bash</code> - it should have several tools pre-installed</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+<div>
+
+</div>
+
+<div>
+
+</div>
+
+</div>
+
+
+
+
+
+  
+  
+  
+  <div class="flex flex-wrap justify-between">
+    <span>
+    
+    </span>
+    <span>
+    
+      <a href="/docs/general/github_repo_setup/" class="flex align-center">
+        <span>Setting up your GitHub Repo</span>
+        <img src="/icons/forward.svg" class="book-icon" alt="Next" title="Setting up your GitHub Repo" />
+      </a>
+    
+    </span>
+  </div>
+  
+
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+        
+        
+
+ 
+      </footer>
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+
+<aside class="book-toc">
+  <div class="book-toc-content">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#create-an-ssh-key">Create an SSH Key</a>
+      <ul>
+        <li><a href="#on-linuxmac">On Linux/Mac</a></li>
+        <li><a href="#on-windows">On Windows</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-a-safe-account">Creating a SAFE account</a></li>
+    <li><a href="#joining-the-hackathon-project">Joining the Hackathon Project</a></li>
+    <li><a href="#getting-a-vm-created">Getting a VM created</a></li>
+    <li><a href="#connecting-to-your-vm">Connecting to your VM</a></li>
+    <li><a href="#spawning-an-openeuler-container">Spawning an openEuler container</a></li>
+  </ul>
+</nav>
+
+
+
+  </div>
+</aside>
+
+ 
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

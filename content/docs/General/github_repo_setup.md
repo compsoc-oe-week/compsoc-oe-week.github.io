@@ -1,5 +1,6 @@
 ---
 title: "Setting up your GitHub Repo"
+weight: 20
 ---
 
 ## How to make a private GitHub Repository on the Challenge Organisation

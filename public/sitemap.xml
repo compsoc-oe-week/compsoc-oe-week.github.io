@@ -4,7 +4,11 @@
   <url>
     <loc>http://localhost:1313/docs/general/</loc>
   </url><url>
+    <loc>http://localhost:1313/docs/general/openeuler_container/</loc>
+  </url><url>
     <loc>http://localhost:1313/docs/track1/</loc>
+  </url><url>
+    <loc>http://localhost:1313/docs/general/github_repo_setup/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/track2/</loc>
   </url><url>
@@ -17,8 +21,6 @@
     <loc>http://localhost:1313/docs/track1/getting-started/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/track2/getting-started/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/general/github_repo_setup/</loc>
   </url><url>
     <loc>http://localhost:1313/showcases/</loc>
   </url><url>
