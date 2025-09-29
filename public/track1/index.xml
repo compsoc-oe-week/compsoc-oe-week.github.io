@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Track 1 on OE Challenge Docs</title>
-    <link>http://localhost:1313/docs/track1/</link>
-    <description>Recent content in Track 1 on OE Challenge Docs</description>
+    <title>Track 1 on My New Hugo Site</title>
+    <link>http://localhost:1313/track1/</link>
+    <description>Recent content in Track 1 on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/docs/track1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/track1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Track 1</title>
-      <link>http://localhost:1313/docs/track1/track1/</link>
+      <link>http://localhost:1313/track1/track1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/docs/track1/track1/</guid>
+      <guid>http://localhost:1313/track1/track1/</guid>
       <description>&lt;h1 id=&#34;overview&#34;&gt;Overview&lt;a class=&#34;anchor&#34; href=&#34;#overview&#34;&gt;#&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;p&gt;For Track 1, we&amp;rsquo;ve allocated 2 shared vLLM instances to be used for your solutions in the challenge. These instances are OpenAI API compatible, meaning they can be interacted with tooling and libraries originally created for working with OpenAI.&lt;/p&gt;&#xA;&lt;p&gt;The first instance can be located at &lt;code&gt;eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000&lt;/code&gt; and is a &lt;code&gt;Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8&lt;/code&gt; model under the hood, to be used for general purpose queries and code generation. The second instance is a visual reasoning focused model and can be found at &lt;code&gt;eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8001&lt;/code&gt; (a &lt;code&gt;Qwen/Qwen2.5-VL-32B-Instruct&lt;/code&gt; model under the hood).&lt;/p&gt;</description>
     </item>
   </channel>
