@@ -4,6 +4,7 @@ weight: 10
 ---
 
 # Getting started as a participant
+**Please submit the registration form for the GitHub organization (found on the Discord server) before requesting access to the project on SAFE**
 ## Create an SSH Key
 For more info, [click here](https://docs.oracle.com/en/cloud/cloud-at-customer/occ-get-started/generate-ssh-key-pair.html) or ask for help
 ### On Linux/Mac
