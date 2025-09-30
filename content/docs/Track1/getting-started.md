@@ -6,7 +6,7 @@ title: "Getting Started with Track 1"
 
 For Track 1, we've allocated 2 shared vLLM instances to be used for your solutions in the challenge. These instances are OpenAI API compatible, meaning they can be interacted with tooling and libraries originally created for working with OpenAI.
 
-The first instance can be located at `eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000` and is a `Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8` model under the hood, to be used for general purpose queries and code generation. The second instance is a visual reasoning focused model and can be found at `eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8001` (a `Qwen/Qwen2.5-VL-32B-Instruct` model under the hood).
+The first instance can be located at `eidf219-network-machine.os.eidf.epcc.ed.ac.uk:8000` and is a `Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8` model under the hood, to be used for general purpose queries and code generation. The second instance is a visual reasoning focused model and can be found at `eidf219-network-machine.vms.os.eidf.epcc.ed.ac.uk:8001` (a `Qwen/Qwen2.5-VL-32B-Instruct` model under the hood).
 
 # Step 1: Connecting to the API
 
@@ -14,7 +14,7 @@ The first instance can be located at `eidf219-main.vms.os.eidf.epcc.ed.ac.uk:800
 
 The first and easiest way to connect to the API is to connect to your team's VM by following the instructions found [here](/docs/general/openeuler_container/). From there, you can run a test query against the vLLM instances like so:
 ```bash
-curl http://eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000/v1/chat/completions -H "Content-Type: application/json" -d '{
+curl http://eidf219-network-machine.vms.os.eidf.epcc.ed.ac.uk:8000/v1/chat/completions -H "Content-Type: application/json" -d '{
   "model": "Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8",
   "messages": [
     {"role": "user", "content": "Give me a short introduction to large language models."}
@@ -30,9 +30,9 @@ curl http://eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000/v1/chat/completions -H "
 
 To connect to the vLLM instances from your local machine, you can use SSH tunneling. In a standard bash shell, the command looks like so,
 ```
-ssh -J <your_username>@eidf-gateway.epcc.ed.ac.uk -L 8000:10.1.0.155:8000 -N <your_username>@<vm_ip>
+ssh -J <your_username>@eidf-gateway.epcc.ed.ac.uk -L 8000:10.1.0.171:8000 -N <your_username>@<vm_ip>
 ```
-where `<your_username>` is replaced with the username given for your team's VM, and `<vm_ip>` is the EIDF IP address associated with your team's VM. Note: when connecting to the visual reasoning vLLM instance (the one using a `Qwen/Qwen2.5-VL-32B-Instruct` mode), replace `8000:10.1.0.155:8000` with `8001:10.1.0.155:8001`.
+where `<your_username>` is replaced with the username given for your team's VM, and `<vm_ip>` is the EIDF IP address associated with your team's VM. Note: when connecting to the visual reasoning vLLM instance (the one using a `Qwen/Qwen2.5-VL-32B-Instruct` mode), replace `8000:10.1.0.171:8000` with `8001:10.1.0.171:8001`.
 
 
 Once you've done this, in a new window you should be able to run a similar test, now by querying the API as `localhost:8000` (or `localhost:8001` if you're querying the visual reasoning instance). 
@@ -63,7 +63,7 @@ openai_api_key = "EMPTY" # This can be left alone
 
 # Uncomment depending on where you're running this script:
 # openai_api_base = "http://localhost:8000/v1" # I'm running from my local machine with SSH tunneling
-# openai_api_base = "http://eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8000/v1" # I'm running from my team's VM
+# openai_api_base = "http://eidf219-network-machine.vms.os.eidf.epcc.ed.ac.uk:8000/v1" # I'm running from my team's VM
 
 client = OpenAI(
     api_key=openai_api_key,
@@ -92,7 +92,7 @@ import base64
 
 # Uncomment depending on where you're running this script:
 # openai_api_base = "http://localhost:8001/v1" # I'm running from my local machine with SSH tunneling
-# openai_api_base = "http://eidf219-main.vms.os.eidf.epcc.ed.ac.uk:8001/v1" # I'm running from my team's VM
+# openai_api_base = "http://eidf219-network-machine.vms.os.eidf.epcc.ed.ac.uk:8001/v1" # I'm running from my team's VM
 
 
 # Replace this with your actual image URL
